@@ -6,15 +6,15 @@ int ca, cb, n;
 struct node{
     int a, b;
     int from; // 回溯解
-    int dis; //利於檢測
-    string mod; //操作
+    int dis; // 利於檢測
+    string mod; // 操作
 };
 
 bool used[1005][1005]; // 判斷是否出現重複狀態
 vector<node> v;
 stack<node> sta;
 
-void sta_push(int f){ //從終點開始反向堆進stack
+void sta_push(int f){ //從終點開始反向堆疊stack
     if (f > 0)sta.push(v[f]);
     if (v[f].from > 0){
         sta_push(v[f].from);
@@ -132,11 +132,6 @@ void bfs(int ca, int cb, int n){
     cout << "success\n";
     return;
 }
-
-
-
-
-
 
 int main(){
     while (cin >> ca >> cb >> n){
